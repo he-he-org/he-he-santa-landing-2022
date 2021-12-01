@@ -1,0 +1,20 @@
+@import "reset.scss";
+
+:root {
+  font-size: .597vmin;
+  --red: #DF0B25;
+}
+
+html, button {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+button {
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}

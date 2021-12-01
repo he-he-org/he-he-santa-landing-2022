@@ -20,6 +20,7 @@
     "build:prepare": "node scripts/prepare.js",
     "build:to-rebuild:scripts": "node scripts/scripts.js",
     "build:to-rebuild:styles": "node scripts/styles.js",
+    "build:to-rebuild:assets": "node scripts/assets.js",
     "build:to-rebuild:html": "node scripts/html.js",
     "build-download-content": "node download.js",
     "build": "npm run all build:**",
