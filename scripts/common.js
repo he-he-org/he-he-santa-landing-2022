@@ -3,6 +3,7 @@ const fs = require('fs');
 
 const ROOT = path.resolve(__dirname, "..");
 const BUILD = path.join(ROOT, "build");
+const CONTENT = path.join(ROOT, "content");
 const SRC = path.join(ROOT, "src");
 const LANGS = ["ru", "en", "es"];
 const DEFAULT_LANG = "ru";
@@ -31,5 +32,5 @@ function readDotEnv() {
 }
 
 module.exports = {
-  ROOT, BUILD, SRC, LANGS, DEFAULT_LANG, readDotEnv
+  ROOT, BUILD, SRC, LANGS, DEFAULT_LANG, CONTENT, readDotEnv
 }

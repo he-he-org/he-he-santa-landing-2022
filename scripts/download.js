@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const contentful = require('contentful');
-const { ROOT, readDotEnv } = require('./common.js');
+const { ROOT, CONTENT, readDotEnv } = require('./common.js');
 
 readDotEnv();
 
@@ -49,7 +49,8 @@ if (!CONTENTFUL_SPACE_ID) {
         'fields.presentForUs': true,
       })
 
-      fs.writeFileSync(path.join(ROOT, 'content', `index.${lang}.json`), JSON.stringify(
+
+      fs.writeFileSync(path.join(CONTENT, `index.${lang}.json`), JSON.stringify(
         {
           ...staticTexts,
           'presents': [
@@ -61,6 +62,8 @@ if (!CONTENTFUL_SPACE_ID) {
         2,
       ))
 
+      // todo: fix when get translations
+      fs.copyFileSync(path.join(CONTENT, `index.en.json`), path.join(CONTENT, `index.es.json`));
     }
   } catch (e) {
     console.error(e)

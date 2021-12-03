@@ -1,4 +1,5 @@
 const fs = require('fs');
-const {BUILD} = require('./common');
+const {BUILD, CONTENT} = require('./common');
 
 fs.mkdirSync(BUILD,{ recursive: true })
+fs.mkdirSync(CONTENT,{ recursive: true })
