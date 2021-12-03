@@ -112,6 +112,7 @@ const debounce = (fn) => {
   }
 };
 
+// Add "scrolled" class to body when scrolled
 let wasScrolled = window.scrollY !== 0;
 document.body.classList.toggle('scrolled', wasScrolled)
 const storeScroll = () => {
