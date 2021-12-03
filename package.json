@@ -2,7 +2,7 @@
   "name": "he-he-santa-landing-2021",
   "version": "1.0.0",
   "description": "",
-  "main": "download.js",
+  "main": "noop.js",
   "dependencies": {
     "contentful": "^8.1.4",
     "esbuild": "^0.14.1",
@@ -18,11 +18,11 @@
     "all": "npx run-s -l",
     "build:clean": "node scripts/clean.js",
     "build:prepare": "node scripts/prepare.js",
+    "build:download-content": "node scripts/download.js",
     "build:to-rebuild:scripts": "node scripts/scripts.js",
     "build:to-rebuild:styles": "node scripts/styles.js",
     "build:to-rebuild:assets": "node scripts/assets.js",
     "build:to-rebuild:html": "node scripts/html.js",
-    "build-download-content": "node download.js",
     "build": "npm run all build:**",
     "start": "node scripts/start.js"
   },

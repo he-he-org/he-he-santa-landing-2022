@@ -1,5 +1,9 @@
 const fs = require('fs');
+const path = require('path');
 const contentful = require('contentful');
+const { ROOT, readDotEnv } = require('./common.js');
+
+readDotEnv();
 
 const PRESENT_ENTRY_TYPE = 'secretSantaPresent';
 
@@ -45,7 +49,7 @@ if (!CONTENTFUL_SPACE_ID) {
         'fields.presentForUs': true,
       })
 
-      fs.writeFileSync(`content/_index.${lang}.md`, JSON.stringify(
+      fs.writeFileSync(path.join(ROOT, 'content', `index.${lang}.json`), JSON.stringify(
         {
           ...staticTexts,
           'presents': [
@@ -58,10 +62,8 @@ if (!CONTENTFUL_SPACE_ID) {
       ))
 
     }
-
-    console.log('Content downloaded')
   } catch (e) {
-    console.error(e.message)
+    console.error(e)
     process.exit(1);
   }
 })()

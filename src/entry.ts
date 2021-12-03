@@ -1,8 +1,24 @@
-const params = null; // todo: define!
+declare const STRIPE_PUBLISHABLE_KEY: string
+declare const DEFAULT_LANG: string
+declare const LANGS: string
+declare const Stripe: (key: string) => {
+  redirectToCheckout: (params: {
+    lineItems: [{ price: string, quantity: number }],
+    mode: string,
+    successUrl: string,
+    cancelUrl: string,
+  }) => Promise<{
+    error?: {
+      message: string
+    }
+  }>
+}
 
-
-const DEFAULT_LANG = 'ru';
-const LANG = window.location.pathname.split('/')[1] === 'en' ? 'en' : DEFAULT_LANG
+let parsedPathname = window.location.pathname.split('/');
+let LANG = DEFAULT_LANG;
+if (LANGS.indexOf(parsedPathname[1]) !== -1) {
+  LANG = parsedPathname[1];
+}
 
 function $(selector) {
   const result = [];
@@ -12,8 +28,7 @@ function $(selector) {
   return result
 }
 
-let STRIPE_PRICE_ID = null;
-
+let stripePriceId = null
 const donateButtonEl = $('#donateButton')[0];
 
 const allAmountsButtons = $('#amounts button');
@@ -21,7 +36,7 @@ const onClickAmount = (e) => {
   const amount = e.currentTarget.getAttribute('data-value')
   const forUs = e.currentTarget.getAttribute('data-for-us')
   const id = e.currentTarget.getAttribute('data-id')
-  STRIPE_PRICE_ID = e.currentTarget.getAttribute('data-stripe-price')
+  stripePriceId = e.currentTarget.getAttribute('data-stripe-price')
   for (const el of allAmountsButtons) {
     el.classList.toggle('isActive', el === e.currentTarget);
   }
@@ -44,43 +59,41 @@ const onClickAmount = (e) => {
 for (const element of allAmountsButtons) {
   element.addEventListener('click', onClickAmount)
 }
-//
-//
-// /**
-//  Stripe
-//  */
-// const STRIPE_PUBLISHABLE_KEY = params.STRIPE_PUBLISHABLE_KEY;
-//
-// // initialize Stripe using your publishable key
-// const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
-//
-// // find the button and error message elements
-// const checkoutButton = document.getElementById('donateButton') as HTMLButtonElement;
-// const errorMessage = document.getElementById('errorMessage') as HTMLButtonElement;
-//
-// // on click, send the user to Stripe Checkout to process the donation
-// checkoutButton.addEventListener('click', () => {
-//   if (STRIPE_PRICE_ID == null) {
-//     console.error(`Price is not selected, unable to make a payment`)
-//     return;
-//   }
-//   checkoutButton.disabled = true;
-//   stripe
-//   .redirectToCheckout({
-//     lineItems: [{ price: STRIPE_PRICE_ID, quantity: 1 }],
-//     mode: 'payment',
-//     successUrl: `${window.location.origin}${LANG === DEFAULT_LANG ? '' : `/${LANG}`}/success/`,
-//     cancelUrl: window.location.origin,
-//   })
-//   .then(function (result) {
-//     if (result.error) {
-//       errorMessage.textContent = result.error.message;
-//     }
-//     checkoutButton.disabled = false;
-//   })
-//   .catch((e) => {
-//     errorMessage.textContent = 'Извините, что-то пошло не так :('
-//     checkoutButton.disabled = false;
-//     throw e;
-//   });
-// });
+
+
+/**
+ Stripe
+ */
+// initialize Stripe using your publishable key
+const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
+
+// find the button and error message elements
+const checkoutButton = document.getElementById('donateButton') as HTMLButtonElement;
+const errorMessage = document.getElementById('errorMessage') as HTMLButtonElement;
+
+// on click, send the user to Stripe Checkout to process the donation
+checkoutButton.addEventListener('click', () => {
+  if (stripePriceId == null) {
+    console.error(`Price is not selected, unable to make a payment`)
+    return;
+  }
+  checkoutButton.disabled = true;
+  stripe
+  .redirectToCheckout({
+    lineItems: [{ price: stripePriceId, quantity: 1 }],
+    mode: 'payment',
+    successUrl: `${window.location.origin}${LANG === DEFAULT_LANG ? '' : `/${LANG}`}/success/`,
+    cancelUrl: window.location.origin,
+  })
+  .then(function (result) {
+    if (result.error) {
+      errorMessage.textContent = result.error.message;
+    }
+    checkoutButton.disabled = false;
+  })
+  .catch((e) => {
+    errorMessage.textContent = 'Извините, что-то пошло не так :('
+    checkoutButton.disabled = false;
+    throw e;
+  });
+});
