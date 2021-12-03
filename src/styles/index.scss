@@ -1,5 +1,32 @@
 @import "./global.scss";
 
+$z-index-header: 10;
+$z-index-bg-list: 1;
+$z-index-donate: 4;
+$z-index-details: 5;
+
+.goToMainSite {
+  position: fixed;
+  top: 2rem;
+  left: 3rem;
+  font-size: 4rem;
+  z-index: $z-index-header;
+  padding: 2rem 3rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.1rem;
+  transition: background-color 500ms;
+
+  span {
+    margin-right: 0.4em;
+    position: relative;
+    top: -0.03em;
+  }
+}
+body.scrolled .goToMainSite {
+  background-color: #343434a3;
+}
+
 .screen {
   width: 100vw;
   min-height: 100vh;
@@ -79,7 +106,7 @@
     flex-direction: column;
 
     .bg-list {
-      z-index: 1;
+      z-index: $z-index-bg-list;
 
       &::before {
         content: ' ';
@@ -159,7 +186,7 @@
       flex-direction: column;
       align-items: flex-start;
       position: relative;
-      z-index: 4;
+      z-index: $z-index-donate;
       flex: 1;
 
       .controls {
@@ -256,7 +283,7 @@
       right: 12rem;
       max-width: 200rem;
       width: calc(100vw - 12rem * 2);
-      z-index: 5;
+      z-index: $z-index-details;
 
       .amount-details {
         opacity: 0;

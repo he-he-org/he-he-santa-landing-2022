@@ -6,7 +6,10 @@ head
   meta(name='viewport' content='initial-scale=1')
   link(rel='preconnect' href='https://fonts.gstatic.com')
   link(href='https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap' rel='stylesheet')
+  link(rel="stylesheet", href="/index.css" )
+  - var langPrefix = currentLang === env.DEFAULT_LANG ? '' : `/${currentLang}`
 body
+  a(href=`https://he-he.org${langPrefix}`).goToMainSite <span>&#10229;</span>Go back
   .screen.cover
     .screen-content
       .language-switch
@@ -15,7 +18,8 @@ body
             a(href='/') #{lang.toUpperCase()}
           else
             a(href='/' + lang + '/') #{lang.toUpperCase()}
-      img.logo(alt='Health&Help logo' src='/assets/logo.svg')
+      a(href=`https://he-he.org${langPrefix}`)
+        img.logo(alt='Health&Help logo' src='/assets/logo.svg')
       h1
         - var list = data.coverHeader.trim().split(/(\r?\n)+/);
         each item in list
@@ -54,5 +58,4 @@ body
               p #{paragraph}
   script(src='https://js.stripe.com/v3')
   script(type='text/javascript', src='/index.js')
-  link(rel="stylesheet", href="/index.css" )
 

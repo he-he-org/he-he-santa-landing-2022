@@ -20,6 +20,7 @@ for (const lang of LANGS) {
       LANGS,
       DEFAULT_LANG,
     },
+    currentLang: lang,
     data,
   }))
 }

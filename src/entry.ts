@@ -97,3 +97,29 @@ checkoutButton.addEventListener('click', () => {
     throw e;
   });
 });
+
+// Add scroll marker
+// The debounce function receives our function as a parameter
+const debounce = (fn) => {
+  let frame;
+  return (...params) => {
+    if (frame) {
+      cancelAnimationFrame(frame);
+    }
+    frame = requestAnimationFrame(() => {
+      fn(...params);
+    });
+  }
+};
+
+let wasScrolled = window.scrollY !== 0;
+document.body.classList.toggle('scrolled', wasScrolled)
+const storeScroll = () => {
+  let isScrolled = window.scrollY !== 0;
+  console.log("isScrolled", isScrolled)
+  if (isScrolled !== wasScrolled) {
+    document.body.classList.toggle('scrolled', isScrolled)
+    wasScrolled = isScrolled;
+  }
+}
+document.addEventListener('scroll', debounce(storeScroll), { passive: true });
