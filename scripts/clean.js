@@ -6,7 +6,3 @@ fs.rmSync(BUILD, {
   force: true,
 })
 
-fs.rmSync(CONTENT, {
-  recursive: true,
-  force: true,
-})

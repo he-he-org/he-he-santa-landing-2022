@@ -5,6 +5,10 @@
 //
 // readDotEnv();
 //
+// fs.rmSync(CONTENT, {
+//   recursive: true,
+//   force: true,
+// })
 // const PRESENT_ENTRY_TYPE = 'secretSantaPresent';
 //
 // const CONTENTFUL_SECRET_KEY = process.env.CONTENTFUL_SECRET_KEY;
