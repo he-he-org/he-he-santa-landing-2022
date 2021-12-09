@@ -9,7 +9,7 @@ head
   link(rel="stylesheet", href="/index.css" )
   - var langPrefix = currentLang === env.DEFAULT_LANG ? '' : `/${currentLang}`
 body
-  a(href=`https://he-he.org${langPrefix}`).goToMainSite <span>&#10229;</span>Go back
+  a(href=`https://he-he.org${langPrefix}`).goToMainSite <span>&#10229;</span>#{data.goBack}
   .screen.cover
     .screen-content
       .language-switch
@@ -47,6 +47,11 @@ body
           button(type='button' data-id=present.id data-for-us=present.presentForUs.toString() data-value=present.price data-stripe-price=present.stripePriceId) $#{present.price}
       .controls
         button#donateButton.donateButton #{data.donateButton}
+        label#donateSubscribeCheckbox.donateSubscribeCheckbox
+          .checkbox
+            input(type='checkbox')
+            .bg
+          div #{data.donateSubscription}
         #errorMessage.errorMessage
     #details.details
       each present in data.presents

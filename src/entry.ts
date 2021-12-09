@@ -30,6 +30,7 @@ function $(selector) {
 
 let stripePriceId = null
 const donateButtonEl = $('#donateButton')[0];
+const donateSubscribeCheckboxEl = $('#donateSubscribeCheckbox')[0];
 
 const allAmountsButtons = $('#amounts button');
 const onClickAmount = (e) => {
@@ -55,6 +56,7 @@ const onClickAmount = (e) => {
     }
   }
   donateButtonEl.classList.add('isVisible')
+  donateSubscribeCheckboxEl.classList.add('isVisible')
 };
 for (const element of allAmountsButtons) {
   element.addEventListener('click', onClickAmount)
