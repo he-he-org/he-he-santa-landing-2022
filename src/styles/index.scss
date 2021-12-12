@@ -27,6 +27,10 @@ body.scrolled .goToMainSite {
   //background-color: #343434a3;
 }
 
+.isVisible {
+  opacity: 1 !important;
+}
+
 .screen {
   width: 100vw;
   min-height: 100vh;
@@ -193,6 +197,14 @@ body.scrolled .goToMainSite {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        opacity: 0;
+
+        .row {
+          display: flex;
+          align-items: stretch;
+          margin-top: 9rem;
+          height: 15rem;
+        }
       }
     }
 
@@ -235,19 +247,9 @@ body.scrolled .goToMainSite {
     }
 
     .donateButton,
-    .donateSubscribeCheckbox,
-    .showDetailsButton,
-    .hideDetailsButton {
-      &.isVisible {
-        opacity: 1;
-      }
-    }
-
-    .donateButton,
     .showDetailsButton,
     .hideDetailsButton {
       border-radius: 2rem;
-      height: 15rem;
       font-size: 5rem;
       color: white;
       padding: 1rem 18rem;
@@ -260,12 +262,39 @@ body.scrolled .goToMainSite {
       }
     }
 
+    .donateButton {
+      background: var(--red);
+      border: none;
+    }
+
+    .donateAmountInput {
+      border: 0.75rem solid var(--red);
+      background: white;
+      border-radius: 2rem;
+      padding: 3rem;
+      font-size: 5rem;
+      max-width: 30rem;
+      text-align: center;
+    }
+
+    .row {
+      .donateButton {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 1rem 12rem;
+      }
+      .donateAmountInput {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+
+
     .donateSubscribeCheckbox {
       display: flex;
       font-size: 5rem;
       align-items: center;
       cursor: pointer;
-      opacity: 0;
       margin-top: 6rem;
 
       .checkbox {
@@ -322,12 +351,6 @@ body.scrolled .goToMainSite {
       margin-top: 10rem;
     }
 
-    .donateButton {
-      background: var(--red);
-      border: none;
-      opacity: 0;
-      margin-top: 9rem;
-    }
 
     .details {
       position: absolute;

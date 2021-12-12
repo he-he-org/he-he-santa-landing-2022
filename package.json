@@ -4,18 +4,22 @@
   "description": "",
   "main": "noop.js",
   "dependencies": {
+    "@netlify/functions": "^0.10.0",
     "contentful": "^8.1.4",
     "esbuild": "^0.14.1",
-    "node-static": "^0.7.11",
     "npm-run-all": "^4.1.5",
     "picocolors": "^1.0.0",
     "pug": "^3.0.2",
     "sass": "^1.44.0",
-    "stripe": "^8.129.0"
+    "stripe": "^8.193.0",
+    "typescript": "^4.5.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "netlify-cli": "^8.0.20"
+  },
   "scripts": {
     "all": "npx run-s -l",
+    "parallel": "npx run-p -l",
     "build:clean": "node scripts/clean.js",
     "build:prepare": "node scripts/prepare.js",
     "build:download-content": "node scripts/download.js",
@@ -24,7 +28,8 @@
     "build:to-rebuild:assets": "node scripts/assets.js",
     "build:to-rebuild:html": "node scripts/html.js",
     "build": "npm run all build:**",
-    "start": "node scripts/start.js"
+    "start:watch": "node scripts/watch.js",
+    "start": "netlify dev"
   },
   "repository": {
     "type": "git",

@@ -28,21 +28,27 @@ function $(selector) {
   return result
 }
 
-let stripePriceId = null
-const donateButtonEl = $('#donateButton')[0];
-const donateSubscribeCheckboxEl = $('#donateSubscribeCheckbox')[0];
+
+// find inputs
+const checkoutButton = document.getElementById('donateButton') as HTMLButtonElement;
+const donateAmountInput = document.getElementById('donateAmount') as HTMLInputElement;
+const subscribeCheckbox = document.getElementById('donateSubscribeCheckbox') as HTMLInputElement;
+const errorMessage = document.getElementById('errorMessage') as HTMLButtonElement;
+
+
+let stripeAmount: string = null
+const hiddenControls = $("#donate-screen .donate .controls")[0] as HTMLElement;
 
 const allAmountsButtons = $('#amounts button');
 const onClickAmount = (e) => {
   const amount = e.currentTarget.getAttribute('data-value')
   const forUs = e.currentTarget.getAttribute('data-for-us')
-  const id = e.currentTarget.getAttribute('data-id')
-  stripePriceId = e.currentTarget.getAttribute('data-stripe-price')
+  stripeAmount = amount;
   for (const el of allAmountsButtons) {
     el.classList.toggle('isActive', el === e.currentTarget);
   }
   for (const detailsEl of $('#details .amount-details')) {
-    if (detailsEl.getAttribute('data-id') === id) {
+    if (detailsEl.getAttribute('data-value') === amount && detailsEl.getAttribute('data-for-us') === forUs) {
       detailsEl.classList.add('isVisible')
     } else {
       detailsEl.classList.remove('isVisible')
@@ -55,49 +61,67 @@ const onClickAmount = (e) => {
       imgEl.classList.remove('isVisible')
     }
   }
-  donateButtonEl.classList.add('isVisible')
-  donateSubscribeCheckboxEl.classList.add('isVisible')
+  donateAmountInput.value = `$${amount}`
+  hiddenControls.classList.add('isVisible')
 };
 for (const element of allAmountsButtons) {
   element.addEventListener('click', onClickAmount)
 }
 
+const donateAmountRe = /^\$?(\d+(?:[,.]\d*)?)$/;
+donateAmountInput.addEventListener('focus', () => {
+  if (donateAmountInput.value.startsWith('$')) {
+    donateAmountInput.value = donateAmountInput.value.substring(1);
+  }
+})
+donateAmountInput.addEventListener('blur', () => {
+  if (!donateAmountInput.value.startsWith('$')) {
+    donateAmountInput.value = '$' + donateAmountInput.value;
+  }
+})
+donateAmountInput.addEventListener('input', () => {
+  checkoutButton.disabled = !donateAmountRe.test(donateAmountInput.value);
+})
 
-/**
- Stripe
- */
 // initialize Stripe using your publishable key
 const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
 
-// find the button and error message elements
-const checkoutButton = document.getElementById('donateButton') as HTMLButtonElement;
-const errorMessage = document.getElementById('errorMessage') as HTMLButtonElement;
-
 // on click, send the user to Stripe Checkout to process the donation
-checkoutButton.addEventListener('click', () => {
-  if (stripePriceId == null) {
-    console.error(`Price is not selected, unable to make a payment`)
-    return;
-  }
+checkoutButton.addEventListener('click', async () => {
   checkoutButton.disabled = true;
-  stripe
-  .redirectToCheckout({
-    lineItems: [{ price: stripePriceId, quantity: 1 }],
-    mode: 'payment',
-    successUrl: `${window.location.origin}${LANG === DEFAULT_LANG ? '' : `/${LANG}`}/success/`,
-    cancelUrl: window.location.origin,
-  })
-  .then(function (result) {
-    if (result.error) {
-      errorMessage.textContent = result.error.message;
+  try {
+    const donateAmountMatch = donateAmountInput.value.match(donateAmountRe);
+    if (donateAmountMatch == null) {
+      throw new Error(`Invalid amount`)
     }
-    checkoutButton.disabled = false;
-  })
-  .catch((e) => {
+    const amount = Math.round(parseFloat(donateAmountMatch[1].replace(',', '.')) * 100)
+
+    const URL = '/.netlify/functions/payment'; // todo: move to env
+    if (stripeAmount == null) {
+      throw new Error(`Please specify donation amount`)
+    }
+    const serverResponse = await fetch(URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        mode: subscribeCheckbox.checked ? "subscription" : "payment",
+        amount: `${amount}`,
+      })
+    })
+    const responseJson = await serverResponse.json();
+    if (responseJson.location == null) {
+      throw new Error(`Bad response, expected to have "location" property for redirect`)
+    }
+    window.location.href = responseJson.location;
+  } catch (e) {
+    // todo: provide translation
     errorMessage.textContent = 'Извините, что-то пошло не так :('
-    checkoutButton.disabled = false;
     throw e;
-  });
+  } finally {
+    checkoutButton.disabled = false;
+  }
 });
 
 // Add scroll marker
@@ -119,10 +143,9 @@ let wasScrolled = window.scrollY !== 0;
 document.body.classList.toggle('scrolled', wasScrolled)
 const storeScroll = () => {
   let isScrolled = window.scrollY !== 0;
-  console.log("isScrolled", isScrolled)
   if (isScrolled !== wasScrolled) {
     document.body.classList.toggle('scrolled', isScrolled)
     wasScrolled = isScrolled;
   }
 }
-document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+document.addEventListener('scroll', debounce(storeScroll), {passive: true});
