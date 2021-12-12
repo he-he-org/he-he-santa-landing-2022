@@ -6,63 +6,8 @@ head
   meta(name='viewport' content='initial-scale=1')
   link(rel='preconnect' href='https://fonts.gstatic.com')
   link(href='https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap' rel='stylesheet')
-  link(rel="stylesheet", href="/index.css" )
   - var langPrefix = currentLang === env.DEFAULT_LANG ? '' : `/${currentLang}`
+  block head
 body
-  a(href=`https://he-he.org${langPrefix}`).goToMainSite <span>&#10229;</span>#{data.goBack}
-  .screen.cover
-    .screen-content
-      .language-switch
-        each lang in env.LANGS
-          if lang === env.DEFAULT_LANG
-            a(href='/') #{lang.toUpperCase()}
-          else
-            a(href='/' + lang + '/') #{lang.toUpperCase()}
-      a(href=`https://he-he.org${langPrefix}`)
-        img.logo(alt='Health&Help logo' src='/assets/logo.svg')
-      h1
-        - var list = data.coverHeader.trim().split(/(\r?\n)+/);
-        each item in list
-          p #{item}
-  .screen.intro
-    .screen-content
-      .text
-        - var paragraphs = data.introText.trim().split(/(\r?\n)+/);
-        each paragraph in paragraphs
-          p #{paragraph}
-  #donate-screen.screen.donate
-    #bg-list.bg-list
-      img.isVisible(data-value='default' data-for-us='false' src='/assets/amount_not_selected.jpg')
-      img.right-bottom(data-value='5' data-for-us='false' src='/assets/5_usd.jpg')
-      img.right-bottom(data-value='10' data-for-us='false' src='/assets/10_usd.jpg')
-      img(data-value='25' data-for-us='false' src='/assets/25_usd.jpg')
-      img(data-value='30' data-for-us='false' src='/assets/30_usd.jpg')
-      img(data-value='50' data-for-us='false' src='/assets/50_usd.jpg')
-      img.right-bottom(data-value='100' data-for-us='false' src='/assets/100_usd.jpg')
-      img.right-bottom(data-value='10' data-for-us='true' src='/assets/10_usd_for_us.jpg')
-    .donate
-      h1 #{data.donateAmountPrompt}
-      #amounts.amounts
-        each present in data.presents
-          button(type='button' data-for-us=present.presentForUs.toString() data-value=present.price) $#{present.price}
-      .controls
-        .row
-          button#donateButton.donateButton #{data.donateButton}
-          input#donateAmount.donateAmountInput(type="text")
-        label.donateSubscribeCheckbox
-          .checkbox
-            input#donateSubscribeCheckbox(type='checkbox')
-            .bg
-          div #{data.donateSubscription}
-        #errorMessage.errorMessage
-    #details.details
-      each present in data.presents
-        .amount-details(data-value=present.price data-id=present.id data-for-us=present.presentForUs.toString())
-          h2 #{present.title}
-          .text
-            - var paragraphs = present.body.trim().split(/(\r?\n)+/);
-            each paragraph in paragraphs
-              p #{paragraph}
-  script(src='https://js.stripe.com/v3')
-  script(type='text/javascript', src='/index.js')
+  block content
 

@@ -106,6 +106,7 @@ checkoutButton.addEventListener('click', async () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        lang: LANG,
         mode: subscribeCheckbox.checked ? "subscription" : "payment",
         amount: `${amount}`,
       })

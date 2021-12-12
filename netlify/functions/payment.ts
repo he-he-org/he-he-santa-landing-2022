@@ -1,12 +1,12 @@
-import { Handler } from "@netlify/functions";
-import { Event } from "@netlify/functions/dist/function/event";
+import {Handler} from "@netlify/functions";
+import {Event} from "@netlify/functions/dist/function/event";
 import {Context} from "@netlify/functions/dist/function/context";
 import {Stripe} from "stripe"
 
-const SUCCESS_URL = '/payment/success'
+const SUCCESS_URL = '/success'
 const CANCEL_URL = '/'
 
-function oneTimePayment(amount: number, productId, host): Stripe.Checkout.SessionCreateParams {
+function oneTimePayment(amount: number, productId: string, baseUrl: string, lang: string): Stripe.Checkout.SessionCreateParams {
   return {
     line_items: [
       {
@@ -20,12 +20,13 @@ function oneTimePayment(amount: number, productId, host): Stripe.Checkout.Sessio
       {},
     ],
     mode: 'payment',
-    success_url: `${host}${SUCCESS_URL}`,
-    cancel_url: `${host}${CANCEL_URL}`,
+    locale: lang as Stripe.Checkout.SessionCreateParams.Locale,
+    success_url: `${baseUrl}${SUCCESS_URL}`,
+    cancel_url: `${baseUrl}${CANCEL_URL}`,
   }
 }
 
-function subscription(amount, productId, host): Stripe.Checkout.SessionCreateParams {
+function subscription(amount: number, productId: string, baseUrl: string, lang: string): Stripe.Checkout.SessionCreateParams {
   return {
     line_items: [
       {
@@ -42,8 +43,9 @@ function subscription(amount, productId, host): Stripe.Checkout.SessionCreatePar
       {},
     ],
     mode: 'subscription',
-    success_url: `${host}${SUCCESS_URL}`,
-    cancel_url: `${host}${CANCEL_URL}`,
+    locale: lang as Stripe.Checkout.SessionCreateParams.Locale,
+    success_url: `${baseUrl}${SUCCESS_URL}`,
+    cancel_url: `${baseUrl}${CANCEL_URL}`,
   }
 }
 
@@ -51,6 +53,9 @@ function subscription(amount, productId, host): Stripe.Checkout.SessionCreatePar
 const handler: Handler = async (event: Event, context: Context) => {
   const PRODUCT_ID = process.env.STRIPE_PRODUCT_ID;
   const SECRET_KEY = process.env.STRIPE_SECRET_KEY;
+  const BASE_URL = process.env.BASE_URL;
+  const LANGS = process.env.LANGS.split(",");
+  const DEFAULT_LANG = process.env.DEFAULT_LANG;
 
   try {
     let body;
@@ -79,12 +84,15 @@ const handler: Handler = async (event: Event, context: Context) => {
       };
     }
 
+    const lang = LANGS.indexOf(body.lang) !== -1 ? body.lang : DEFAULT_LANG;
+
     const stripeInstance = new Stripe(SECRET_KEY, {
       apiVersion: "2020-08-27",
     })
+    const baseUrl = lang === DEFAULT_LANG ? BASE_URL : `${BASE_URL}/${lang}`;
     const sessionParams: Stripe.Checkout.SessionCreateParams = mode === 'subscription'
-      ? subscription(parseInt(amount), PRODUCT_ID, process.env.BASE_URL)
-      : oneTimePayment(parseInt(amount), PRODUCT_ID, process.env.BASE_URL);
+      ? subscription(parseInt(amount), PRODUCT_ID, baseUrl, lang)
+      : oneTimePayment(parseInt(amount), PRODUCT_ID, baseUrl, lang);
     const session = await stripeInstance.checkout.sessions.create(sessionParams);
     return {
       statusCode: 200,

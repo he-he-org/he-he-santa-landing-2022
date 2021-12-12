@@ -1,4 +1,4 @@
-@import "global.scss";
+@import "./styles/global.scss";
 
 body {
   width: 100vw;
@@ -13,8 +13,6 @@ body {
   font-size: 28px;
 }
 
-.backLink {
-  font-size: 18px;
+.goToMainSite {
   color: black;
-  margin-top: 4rem;
 }

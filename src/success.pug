@@ -1,0 +1,8 @@
+extends layout.pug
+
+block head
+  link(rel="stylesheet", href="/success.css" )
+
+block content
+  a(href=`https://he-he.org${langPrefix}`).goToMainSite <span>&#10229;</span>#{data.goBack}
+  h1.message #{data.thankYou}

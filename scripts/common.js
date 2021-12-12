@@ -5,8 +5,8 @@ const ROOT = path.resolve(__dirname, "..");
 const BUILD = path.join(ROOT, "build");
 const CONTENT = path.join(ROOT, "content");
 const SRC = path.join(ROOT, "src");
-const LANGS = ["ru", "en", "es"];
-const DEFAULT_LANG = "ru";
+const LANGS = process.env.LANGS.split(",");
+const DEFAULT_LANG = process.env.DEFAULT_LANG;
 
 function readDotEnv() {
   let mergedConfig = {};
