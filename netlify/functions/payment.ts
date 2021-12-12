@@ -83,8 +83,8 @@ const handler: Handler = async (event: Event, context: Context) => {
       apiVersion: "2020-08-27",
     })
     const sessionParams: Stripe.Checkout.SessionCreateParams = mode === 'subscription'
-      ? subscription(parseInt(amount), PRODUCT_ID, process.env.DEPLOY_URL)
-      : oneTimePayment(parseInt(amount), PRODUCT_ID, process.env.DEPLOY_URL);
+      ? subscription(parseInt(amount), PRODUCT_ID, process.env.BASE_URL)
+      : oneTimePayment(parseInt(amount), PRODUCT_ID, process.env.BASE_URL);
     const session = await stripeInstance.checkout.sessions.create(sessionParams);
     return {
       statusCode: 200,
