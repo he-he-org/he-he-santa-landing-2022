@@ -36,33 +36,41 @@ const subscribeCheckbox = document.getElementById('donateSubscribeCheckbox') as 
 const errorMessage = document.getElementById('errorMessage') as HTMLButtonElement;
 
 
-let stripeAmount: string = null
+let productInfo = null;
 const hiddenControls = $("#donate-screen .donate .controls")[0] as HTMLElement;
 
 const allAmountsButtons = $('#amounts button');
 const onClickAmount = (e) => {
-  const amount = e.currentTarget.getAttribute('data-value')
+  const productKey = e.currentTarget.getAttribute('data-product-key')
+  const custom = e.currentTarget.getAttribute('data-custom') === "true"
   const forUs = e.currentTarget.getAttribute('data-for-us')
-  stripeAmount = amount;
+  const amount = custom ? 10 : parseInt(e.currentTarget.getAttribute('data-value'))
+  productInfo = {
+    amount: amount * 100,
+    productKey,
+    custom,
+  }
   for (const el of allAmountsButtons) {
     el.classList.toggle('isActive', el === e.currentTarget);
   }
   for (const detailsEl of $('#details .amount-details')) {
-    if (detailsEl.getAttribute('data-value') === amount && detailsEl.getAttribute('data-for-us') === forUs) {
+    if (detailsEl.getAttribute('data-product-key') === productKey) {
       detailsEl.classList.add('isVisible')
     } else {
       detailsEl.classList.remove('isVisible')
     }
   }
   for (const imgEl of $('#bg-list > img')) {
-    if (imgEl.getAttribute('data-value') === amount && imgEl.getAttribute('data-for-us') === forUs) {
+    if (imgEl.getAttribute('data-product-key') === productKey) {
       imgEl.classList.add('isVisible')
     } else {
       imgEl.classList.remove('isVisible')
     }
   }
   donateAmountInput.value = `$${amount}`
+  checkoutButton.disabled = false;
   hiddenControls.classList.add('isVisible')
+  donateAmountInput.classList.toggle("isShown", custom)
 };
 for (const element of allAmountsButtons) {
   element.addEventListener('click', onClickAmount)
@@ -80,7 +88,13 @@ donateAmountInput.addEventListener('blur', () => {
   }
 })
 donateAmountInput.addEventListener('input', () => {
-  checkoutButton.disabled = !donateAmountRe.test(donateAmountInput.value);
+  const donateAmountMatch = donateAmountInput.value.match(donateAmountRe);
+  if (donateAmountMatch == null) {
+    checkoutButton.disabled = true;
+  } else {
+    productInfo.amount = Math.round(parseFloat(donateAmountMatch[1].replace(',', '.')) * 100)
+    checkoutButton.disabled = false;
+  }
 })
 
 // initialize Stripe using your publishable key
@@ -90,16 +104,10 @@ const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
 checkoutButton.addEventListener('click', async () => {
   checkoutButton.disabled = true;
   try {
-    const donateAmountMatch = donateAmountInput.value.match(donateAmountRe);
-    if (donateAmountMatch == null) {
-      throw new Error(`Invalid amount`)
+    if (productInfo == null) {
+      throw new Error(`Product is not selected`);
     }
-    const amount = Math.round(parseFloat(donateAmountMatch[1].replace(',', '.')) * 100)
-
     const URL = '/.netlify/functions/payment'; // todo: move to env
-    if (stripeAmount == null) {
-      throw new Error(`Please specify donation amount`)
-    }
     const serverResponse = await fetch(URL, {
       method: 'POST',
       headers: {
@@ -108,9 +116,14 @@ checkoutButton.addEventListener('click', async () => {
       body: JSON.stringify({
         lang: LANG,
         mode: subscribeCheckbox.checked ? "subscription" : "payment",
-        amount: `${amount}`,
+        amount: `${productInfo.amount}`,
+        productKey: productInfo.productKey,
       })
     })
+    if (!serverResponse.ok) {
+      const message = await serverResponse.text();
+      throw new Error(message);
+    }
     const responseJson = await serverResponse.json();
     if (responseJson.location == null) {
       throw new Error(`Bad response, expected to have "location" property for redirect`)
@@ -118,7 +131,7 @@ checkoutButton.addEventListener('click', async () => {
     window.location.href = responseJson.location;
   } catch (e) {
     // todo: provide translation
-    errorMessage.textContent = 'Извините, что-то пошло не так :('
+    errorMessage.textContent = 'There seems to be an error. Please reload the page or come back later.'
     throw e;
   } finally {
     checkoutButton.disabled = false;

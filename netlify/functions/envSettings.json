@@ -1,0 +1,114 @@
+{
+  "production": {
+    "products": [
+      {
+        "key": "5_DOLLARS",
+        "stripeId": "prod_IbKQWxBs2znOYy"
+      },
+      {
+        "key": "10_DOLLARS",
+        "stripeId": "prod_IbKRFJITfNKaj1"
+      },
+      {
+        "key": "25_DOLLARS",
+        "stripeId": "prod_IbKRmMZAqL6IDM"
+      },
+      {
+        "key": "50_DOLLARS",
+        "stripeId": "prod_IbKROvifqeNrBt"
+      },
+      {
+        "key": "100_DOLLARS",
+        "stripeId": "prod_IbKRUk98euMY8T"
+      },
+      {
+        "key": "10_DOLLARS_US",
+        "stripeId": "prod_Kn0BWQ7fnfdpWZ"
+      },
+      {
+        "key": "CUSTOM",
+        "stripeId": "prod_KlEf5E9x5SejnF"
+      },
+      {
+        "key": "7_DOLLARS_RU",
+        "stripeId": "prod_KmyT5L2ucguGYK"
+      },
+      {
+        "key": "20_DOLLARS_RU",
+        "stripeId": "prod_KmyTxVN1BhCbOZ"
+      },
+      {
+        "key": "40_DOLLARS_RU",
+        "stripeId": "prod_KmyUmHn9tEqU9W"
+      },
+      {
+        "key": "75_DOLLARS_RU",
+        "stripeId": "prod_KmyV5Lo28pI1Dr"
+      },
+      {
+        "key": "250_DOLLARS_RU",
+        "stripeId": "prod_KmyVX2fcHkAdHs"
+      },
+      {
+        "key": "CUSTOM_RU",
+        "stripeId": "prod_KmyVKa53elYWJ6"
+      }
+    ]
+  },
+  "development": {
+    "products": [
+      {
+        "key": "5_DOLLARS",
+        "stripeId": "prod_IbKQWxBs2znOYy"
+      },
+      {
+        "key": "10_DOLLARS",
+        "stripeId": "prod_IbKRFJITfNKaj1"
+      },
+      {
+        "key": "25_DOLLARS",
+        "stripeId": "prod_IbKRmMZAqL6IDM"
+      },
+      {
+        "key": "50_DOLLARS",
+        "stripeId": "prod_IbKROvifqeNrBt"
+      },
+      {
+        "key": "100_DOLLARS",
+        "stripeId": "prod_IbKRUk98euMY8T"
+      },
+      {
+        "key": "10_DOLLARS_US",
+        "stripeId": "prod_Kn0BWQ7fnfdpWZ"
+      },
+      {
+        "key": "CUSTOM",
+        "stripeId": "prod_KlEf5E9x5SejnF"
+      },
+      {
+        "key": "7_DOLLARS_RU",
+        "stripeId": "prod_KmyT5L2ucguGYK"
+      },
+      {
+        "key": "20_DOLLARS_RU",
+        "stripeId": "prod_KmyTxVN1BhCbOZ"
+      },
+      {
+        "key": "40_DOLLARS_RU",
+        "stripeId": "prod_KmyUmHn9tEqU9W"
+      },
+      {
+        "key": "75_DOLLARS_RU",
+        "stripeId": "prod_KmyV5Lo28pI1Dr"
+      },
+      {
+        "key": "250_DOLLARS_RU",
+        "stripeId": "prod_KmyVX2fcHkAdHs"
+      },
+      {
+        "key": "CUSTOM_RU",
+        "stripeId": "prod_KmyVKa53elYWJ6"
+      }
+    ]
+  }
+}

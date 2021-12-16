@@ -3,6 +3,8 @@ import {Event} from "@netlify/functions/dist/function/event";
 import {Context} from "@netlify/functions/dist/function/context";
 import {Stripe} from "stripe"
 
+const envSettings = require("./envSettings.json")
+
 const SUCCESS_URL = '/success'
 const CANCEL_URL = '/'
 
@@ -51,11 +53,13 @@ function subscription(amount: number, productId: string, baseUrl: string, lang: 
 
 
 const handler: Handler = async (event: Event, context: Context) => {
-  const PRODUCT_ID = process.env.STRIPE_PRODUCT_ID;
   const SECRET_KEY = process.env.STRIPE_SECRET_KEY;
   const BASE_URL = process.env.BASE_URL;
   const LANGS = process.env.LANGS.split(",");
   const DEFAULT_LANG = process.env.DEFAULT_LANG;
+  const ENV = process.env.ENV === "development" ? "development" : "production";
+
+  const settings = envSettings[ENV];
 
   try {
     let body;
@@ -68,6 +72,22 @@ const handler: Handler = async (event: Event, context: Context) => {
         body: `Unable to parse request body as JSON`
       }
     }
+    const productKey = body.productKey;
+    if (productKey == null || typeof productKey !== "string") {
+      return {
+        statusCode: 400,
+        body: `'productKey' parameter is required`,
+      };
+    }
+
+    const product = settings.products.find(x => x.key === productKey);
+    if (product == null) {
+      return {
+        statusCode: 400,
+        body: `Unable to find product by key "${productKey}"`,
+      };
+    }
+
     const amount = body.amount;
     if (amount == null || typeof amount !== "string" || !/^\d+$/.test(amount)) {
       return {
@@ -91,8 +111,8 @@ const handler: Handler = async (event: Event, context: Context) => {
     })
     const baseUrl = lang === DEFAULT_LANG ? BASE_URL : `${BASE_URL}/${lang}`;
     const sessionParams: Stripe.Checkout.SessionCreateParams = mode === 'subscription'
-      ? subscription(parseInt(amount), PRODUCT_ID, baseUrl, lang)
-      : oneTimePayment(parseInt(amount), PRODUCT_ID, baseUrl, lang);
+      ? subscription(parseInt(amount), product.stripeId, baseUrl, lang)
+      : oneTimePayment(parseInt(amount), product.stripeId, baseUrl, lang);
     const session = await stripeInstance.checkout.sessions.create(sessionParams);
     return {
       statusCode: 200,
