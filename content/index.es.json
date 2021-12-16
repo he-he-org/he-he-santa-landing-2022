@@ -1,13 +1,13 @@
 {
-  "coverHeader": "Do you want to wish someone a Happy New Year?\n\nToday, you are the Secret Santa!",
-  "goBack": "To main site",
+  "coverHeader": "**Spanish** Do you want to wish someone a Happy New Year?\n\nToday, you are the Secret Santa!",
+  "goBack": "**Spanish** To main site",
   "introText": "Hoy puedes convertirte en el Amigo Invisible de un paciente de Health & Help. En esta página hemos recogido cinco historias de nuestra práctica. Como los personajes de nuestras historias, en Guatemala y Nicaragua hay cientos de personas que necesitan tu ayuda.\n\n¿Quieres hacer un regalo de Navidad a alguno de los pacientes? Elige la opción que te parezca más conveniente. Tu donación ayudará a pacientes que tienen este tipo de enfermedades o necesidades.",
-  "donateAmountPrompt": "How much are you willing to donate?",
-  "donateButton": "Donate",
-  "donateSubscription": "** Spanish ** Subscribe to monthly payment",
-  "showDetailsButton": "**English** Что за подарок?",
-  "closeDetailsButton": "**English** Понятно!",
-  "thankYou": "** ES ** Thank you for your contribution!",
+  "donateAmountPrompt": "**Spanish** How much are you willing to donate?",
+  "donateButton": "**Spanish** Donate",
+  "donateSubscription": "**Spanish** Subscribe to monthly payment",
+  "showDetailsButton": "**Spanish** Что за подарок?",
+  "closeDetailsButton": "**Spanish** Понятно!",
+  "thankYou": "**Spanish** Thank you for your contribution!",
   "presents": [
     {
       "price": 5,
@@ -65,9 +65,9 @@
     },
     {
       "productKey": "CUSTOM",
-      "title": "Other donation",
+      "title": "**Spanish** Other donation",
       "image": "custom.jpg",
-      "body": "Hoy puedes convertirte en el Amigo Invisible de un paciente de Health & Help. En esta página hemos recogido cinco historias de nuestra práctica. Como los personajes de nuestras historias, en Guatemala y Nicaragua hay cientos de personas que necesitan tu ayuda. \n\n¿Quieres hacer un regalo de Navidad a alguno de los pacientes? Elige la opción que te parezca más conveniente. Tu donación ayudará a pacientes que tienen este tipo de enfermedades o necesidades. \n\n",
+      "body": "**Spanish** We’ve told you just five stories about the issues our patients face, but we deal with many more illnesses at the clinic. The price of treatment can range from just a few dollars to several hundred, or even thousand, US dollars. You can make a one-time contribution for any amount you are able to give, or subscribe to a monthly donation. We will gladly use these funds to buy the medicine our patients need so we can tell many more of their stories with happy endings!",
       "presentForUs": true,
       "custom": true
     }
