@@ -1,13 +1,13 @@
 {
-  "coverHeader": "**Spanish** Do you want to wish someone a Happy New Year?\n\nToday, you are the Secret Santa!",
-  "goBack": "**Spanish** To main site",
+  "coverHeader": "¿Te gustaría desear a alguien una Feliz Navidad?\n\n¡Hoy tú eres el Amigo Invisible! ",
+  "goBack": "Volver a la página principal",
   "introText": "Hoy puedes convertirte en el Amigo Invisible de un paciente de Health & Help. En esta página hemos recogido cinco historias de nuestra práctica. Como los personajes de nuestras historias, en Guatemala y Nicaragua hay cientos de personas que necesitan tu ayuda.\n\n¿Quieres hacer un regalo de Navidad a alguno de los pacientes? Elige la opción que te parezca más conveniente. Tu donación ayudará a pacientes que tienen este tipo de enfermedades o necesidades.",
-  "donateAmountPrompt": "**Spanish** How much are you willing to donate?",
-  "donateButton": "**Spanish** Donate",
-  "donateSubscription": "**Spanish** Subscribe to monthly payment",
+  "donateAmountPrompt": "¿A quién te gustaría ayudar en esta Navidad?",
+  "donateButton": "Donar",
+  "donateSubscription": "Registrarse para una donación mensual",
   "showDetailsButton": "**Spanish** Что за подарок?",
   "closeDetailsButton": "**Spanish** Понятно!",
-  "thankYou": "**Spanish** Thank you for your contribution!",
+  "thankYou": "¡Gracias por tu ayuda!",
   "presents": [
     {
       "price": 5,
@@ -65,9 +65,9 @@
     },
     {
       "productKey": "CUSTOM",
-      "title": "**Spanish** Other donation",
+      "title": "Otra suma",
       "image": "custom.jpg",
-      "body": "**Spanish** We’ve told you just five stories about the issues our patients face, but we deal with many more illnesses at the clinic. The price of treatment can range from just a few dollars to several hundred, or even thousand, US dollars. You can make a one-time contribution for any amount you are able to give, or subscribe to a monthly donation. We will gladly use these funds to buy the medicine our patients need so we can tell many more of their stories with happy endings!",
+      "body": "Te hemos contado cinco historias de nuestra clínica, pero nosotros nos enfrentamos a muchas más enfermedades y situaciones difíciles. El costo del tratamiento puede ser de dos, cien o incluso miles de dólares. Puedes hacer una donación única por la suma que te parezca conveniente o registrarte para una donación mensual. Con tu ayuda, compraremos los medicamentos necesarios para nuestros pacientes ¡y te contaremos muchas más historias con un final feliz!",
       "presentForUs": true,
       "custom": true
     }
