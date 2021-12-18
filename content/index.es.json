@@ -13,17 +13,17 @@
       "price": 5,
       "image": "5_usd.jpg",
       "productKey": "5_DOLLARS",
-      "title": "Inyección anticonceptiva de 3 meses para una mujer.  (Depo-Provera)",
-      "body": "Albertina Gómez tiene cuatro hijos: Anderson, José, Marco y Antonio. Los mayores, Anderson y José, van al colegio. El matrimonio no tiene dinero para financiar la educación de los otros dos niños.\n\nAlbertina y su marido no quieren tener más hijos. Saben que en las farmacias se venden preservativos, pero son costosos. Hemos elegido un método de contracepción cómodo para Albertina. Cada tres meses le damos una inyección anticonceptiva. Así puede estar tranquila y evitar un embarazo no planeado. \n\nLa mayoría de familias guatemaltecas tienen de 4 a 12 hijos. En muchos casos a los padres les cuesta mucho mantener a su familia y, al mismo tiempo, no pueden permitirse comprar anticonceptivos.",
+      "title": "Inyección anticonceptiva de 3 meses para una mujer (Depo-Provera)",
+      "body": "Albertina Gómez tiene cuatro hijos: Anderson, José, Marco y Antonio. Los mayores, Anderson y José, van al colegio. El matrimonio no tiene dinero para financiar la educación de los otros dos niños.\n\nAlbertina y su marido no quieren tener más hijos. Saben que en las farmacias se venden preservativos, pero son costosos. Hemos elegido un método de contracepción cómodo para Albertina. Cada tres meses le damos una inyección anticonceptiva. Así puede estar tranquila y evitar un embarazo no planeado. \n\nSegún datos de la OMS, las mujeres en Guatemala tienen en promedio cinco hijos.",
       "presentForUs": false,
       "custom": false
     },
     {
-      "price": 10,
+      "price": 17,
       "image":  "10_usd.jpg",
       "productKey": "10_DOLLARS",
       "title": "Hipertensión inducida por el embarazo. Enfermedades de riñones, hígado y el sistema urogenital. (tiras reactivas de orina 100 uds.)",
-      "body": "Martina Sánchez está embarazada. Últimamente le dolía la cabeza y acudió a la clínica para pedir analgésicos. Los doctores le pidieron una muestra de orina. Martina se sorprendió cuando los voluntarios la trasladaron con urgencia al hospital municipal. Ella no sospechaba que tenía hipertensión inducida por el embarazo, también conocida como preeclampsia, una patología que puede matar tanto a la madre como al bebé. Se puede diagnosticar con simples tiras reactivas al descubrir un nivel elevado de proteína en la orina.\n\nEstas tiras reactivas también ayudan a revelar problemas en los riñones, el hígado, los conductos biliares y también infecciones de las vías urinarias. Se venden por lotes de 100 unidades que cuestan 10 dólares cada uno. En este caso tan solo 10 centavos (el precio de una tira) pueden salvar dos vidas a la vez.",
+      "body": "Martina Sánchez está embarazada. Últimamente le dolía la cabeza y acudió a la clínica para pedir analgésicos. Los doctores le pidieron una muestra de orina. Martina se sorprendió cuando los voluntarios la trasladaron con urgencia al hospital municipal. Ella no sospechaba que tenía hipertensión inducida por el embarazo, también conocida como preeclampsia, una patología que puede matar tanto a la madre como al bebé. Se puede diagnosticar con simples tiras reactivas al descubrir un nivel elevado de proteína en la orina.\n\nEstas tiras reactivas también ayudan a revelar problemas en los riñones, el hígado, los conductos biliares y también infecciones de las vías urinarias. Se venden por lotes de 100 unidades que cuestan 17 dólares cada uno. En este caso tan solo 10 centavos (el precio de una tira) pueden salvar dos vidas a la vez.",
       "presentForUs": false,
       "custom": false
     },
@@ -46,10 +46,10 @@
       "custom": false
     },
     {
-      "price": 100,
+      "price": 250,
       "image":  "100_usd.jpg",
       "productKey": "100_DOLLARS",
-      "title": "Diabetes tipo 2 (un kit para paciente con diabetes: glucómetro, tiras reactivas, plumas de insulina)",
+      "title": "Diabetes tipo 2",
       "body": "Aunque hace poco trabajaba y estaba sana, Rosa ahora tiene diabetes tipo 2. Cuatro años atrás a su hija le detectaron diabetes y medio año después a Rosa le diagnosticaron la misma enfermedad.  \n\nRosa se mareaba mucho en el transporte. A pesar de eso, cada mes viajaba dos días en autobús hasta Managua para recibir insulina para su hija y luego viajaba dos días más para regresar a casa. Lamentablemente, su hija de 14 años no sobrevivió a la enfermedad. Después de su muerte, la salud de Rosa empezó a empeorar y la insulina se convirtió en una necesidad vital para ella. Ahora Rosa recibe insulina en nuestra clínica. \n\nUno de cada tres pacientes de nuestra clínica es diabético. ",
       "presentForUs": false,
       "custom": false

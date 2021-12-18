@@ -66,6 +66,10 @@
         "stripeId": "prod_IbKRFJITfNKaj1"
       },
       {
+        "key": "10_DOLLARS",
+        "stripeId": "prod_IbKRFJITfNKaj1"
+      },
+      {
         "key": "25_DOLLARS",
         "stripeId": "prod_IbKRmMZAqL6IDM"
       },
