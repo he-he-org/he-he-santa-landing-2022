@@ -26,10 +26,6 @@
         "stripeId": "prod_IdF6Cx3hcJ6lKg"
       },
       {
-        "key": "CUSTOM",
-        "stripeId": "prod_KlEf5E9x5SejnF"
-      },
-      {
         "key": "7_DOLLARS_RU",
         "stripeId": "prod_Kn0lns1f7OIKt5"
       },
@@ -48,6 +44,10 @@
       {
         "key": "250_DOLLARS_RU",
         "stripeId": "prod_Kn0lLNdbfuh96c"
+      },
+      {
+        "key": "CUSTOM",
+        "stripeId": "prod_KnnMROF1aWxH2T"
       },
       {
         "key": "CUSTOM_RU",
@@ -86,10 +86,6 @@
         "stripeId": "prod_Kn0BWQ7fnfdpWZ"
       },
       {
-        "key": "CUSTOM",
-        "stripeId": "prod_KlEf5E9x5SejnF"
-      },
-      {
         "key": "7_DOLLARS_RU",
         "stripeId": "prod_KmyT5L2ucguGYK"
       },
@@ -108,6 +104,10 @@
       {
         "key": "250_DOLLARS_RU",
         "stripeId": "prod_KmyVX2fcHkAdHs"
+      },
+      {
+        "key": "CUSTOM",
+        "stripeId": "prod_KlEf5E9x5SejnF"
       },
       {
         "key": "CUSTOM_RU",
