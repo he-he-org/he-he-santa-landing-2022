@@ -44,7 +44,7 @@ const onClickAmount = (e) => {
   const productKey = e.currentTarget.getAttribute('data-product-key')
   const custom = e.currentTarget.getAttribute('data-custom') === "true"
   const forUs = e.currentTarget.getAttribute('data-for-us')
-  const amount = custom ? 10 : parseInt(e.currentTarget.getAttribute('data-value'))
+  const amount = custom ? null : parseInt(e.currentTarget.getAttribute('data-value'))
   productInfo = {
     amount: amount * 100,
     productKey,
@@ -67,10 +67,17 @@ const onClickAmount = (e) => {
       imgEl.classList.remove('isVisible')
     }
   }
-  donateAmountInput.value = `$${amount}`
-  checkoutButton.disabled = false;
   hiddenControls.classList.add('isVisible')
-  donateAmountInput.classList.toggle("isShown", custom)
+  if (custom) {
+    donateAmountInput.classList.toggle("isShown", true)
+    donateAmountInput.focus();
+    donateAmountInput.value = ``
+    checkoutButton.disabled = true;
+  } else {
+    donateAmountInput.classList.toggle("isShown", false)
+    donateAmountInput.value = `$${amount}`
+    checkoutButton.disabled = false;
+  }
 };
 for (const element of allAmountsButtons) {
   element.addEventListener('click', onClickAmount)
@@ -85,6 +92,9 @@ donateAmountInput.addEventListener('focus', () => {
 donateAmountInput.addEventListener('blur', () => {
   if (!donateAmountInput.value.startsWith('$')) {
     donateAmountInput.value = '$' + donateAmountInput.value;
+  }
+  if (donateAmountInput.value === '$') {
+    donateAmountInput.value = '';
   }
 })
 donateAmountInput.addEventListener('input', () => {

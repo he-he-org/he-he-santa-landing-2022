@@ -15,7 +15,7 @@ block content
             a(href='/' + lang + '/') #{lang.toUpperCase()}
       a(href=`https://he-he.org${langPrefix}`)
         img.logo(alt='Health&Help logo' src='/assets/logo.svg')
-      h1
+      .caption
         - var list = data.coverHeader.trim().split(/(\r?\n)+/);
         each item in list
           p #{item}

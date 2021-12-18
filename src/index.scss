@@ -22,7 +22,7 @@ body.scrolled .goToMainSite {
     justify-content: center;
     align-items: center;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.0174) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, rgba(0, 0, 0, 0.45) 100%, rgba(255, 255, 255, 0.45) 100%), url('/assets/bg.jpg');
-    background-position: 30% center;
+    background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -30,6 +30,10 @@ body.scrolled .goToMainSite {
 
     * {
       color: white;
+    }
+
+    .logo {
+      width: 78rem;
     }
 
     .language-switch {
@@ -51,7 +55,7 @@ body.scrolled .goToMainSite {
       flex-direction: column;
       align-items: center;
 
-      h1 {
+      .caption {
         margin-top: 1rem;
         font-size: 6rem;
         line-height: 1.5em;
