@@ -55,15 +55,6 @@
       "custom": false
     },
     {
-      "price": 10,
-      "image":  "10_usd.jpg",
-      "productKey": "10_DOLLARS_US",
-      "title": "Baldosas para el suelo de la clínica en Guatemala  (1 metro cuadrado de suelo; todo el suelo: $2561.03)",
-      "body": "Lavamos el suelo de la clínica dos veces al día. También lo lavamos si hay manchas de sangre. Usamos cloro, desinfectante y alcohol porque la zona de la clínica debe ser estéril. Nuestro suelo está revestido con baldosas de arcilla que no aguantaron este tratamiento tan agresivo y empezaron a resquebrajarse. A la hora de construir la clínica nos faltó dinero para comprar baldosas de cerámica, pero ahora sabemos que son imprescindibles. \n\n \n\nLa superficie de nuestra clínica es de unos 150 m2 incluyendo la cocina, el comedor, las habitaciones de los voluntarios y los consultorios. Cambiar el suelo en toda la clínica costará 2.600 dólares, incluyendo la mano de obra, pero lo esencial es poner baldosas de cerámica al menos en los consultorios, porque esterilizar la zona con un suelo desgastado es cada vez más difícil.",
-      "presentForUs": true,
-      "custom": false
-    },
-    {
       "productKey": "CUSTOM",
       "title": "Otra suma",
       "image": "custom.jpg",

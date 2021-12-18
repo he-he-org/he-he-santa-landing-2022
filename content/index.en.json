@@ -55,15 +55,6 @@
       "custom": false
     },
     {
-      "price": 10,
-      "image": "10_usd.jpg",
-      "productKey": "10_DOLLARS_US",
-      "title": "1 sq. meter of flooring, total cost of floor: $2561.03",
-      "body": "We wash our floor twice a day (or more, if blood gets on it). We use chlorine, disinfectant, and alcohol - the clinic needs to be sterile. Our floor is made of clay tiles, but they have not survived such aggressive cleaning and are starting to crumble. When we built the clinic, we did not have enough money for ceramic tiles, but we now know this is a necessity. \n\nOur building has about 150 sq meters of floor - a kitchen, dining room, bedrooms, and the clinic. Placing ceramic tiles in the entire building costs around $2600, but we would like to at least get this done in the clinic itself, as it is getting harder and harder to maintain a sterile working environment with a crumbling clay floor.",
-      "presentForUs": true,
-      "custom": false
-    },
-    {
       "productKey": "CUSTOM",
       "title": "Other donation",
       "image": "custom.jpg",
