@@ -408,6 +408,7 @@ body.scrolled .goToMainSite {
       .donateButton,
       .showDetailsButton {
         padding: 1rem 6rem;
+        flex: 1;
       }
 
       .hideDetailsButton {
@@ -427,6 +428,10 @@ body.scrolled .goToMainSite {
       .donate {
         align-items: unset;
         min-height: unset;
+
+        .controls {
+          align-items: stretch;
+        }
       }
 
       .details {
