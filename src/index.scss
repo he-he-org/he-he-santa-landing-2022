@@ -221,10 +221,11 @@ body.scrolled .goToMainSite {
           left: 50%;
           border: 0.5rem solid var(--red);
           transform: translateX(-50%) translateY(-50%);
-          padding: 6rem 5rem;
+          padding: 3rem 5rem;
           border-radius: 0.75rem;
           display: none;
           width: 100%;
+          height: 100%;
           box-sizing: content-box;
         }
 
@@ -395,6 +396,10 @@ body.scrolled .goToMainSite {
       padding: 9rem 9rem;
 
       .bg-list {
+        &::before {
+          background: rgb(0 0 0 / 64%);
+        }
+
         img {
           object-position: 75% bottom;
         }
@@ -402,7 +407,7 @@ body.scrolled .goToMainSite {
 
       .donateButton,
       .showDetailsButton {
-        padding: 1rem;
+        padding: 1rem 6rem;
       }
 
       .hideDetailsButton {
@@ -446,7 +451,10 @@ body.scrolled .goToMainSite {
       }
 
       .amounts {
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 3rem;
+        align-items: center;
 
         > button:not(:first-child) {
           margin-left: 0;
@@ -454,7 +462,7 @@ body.scrolled .goToMainSite {
 
         > button {
           &::before {
-            padding: 5rem 7rem;
+            padding: 2rem 0;
           }
         }
       }
