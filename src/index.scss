@@ -27,6 +27,7 @@ body.scrolled .goToMainSite {
     background-size: cover;
     position: relative;
     text-align: center;
+    padding: 6rem;
 
     * {
       color: white;
@@ -397,11 +398,13 @@ body.scrolled .goToMainSite {
 
       .bg-list {
         &::before {
-          background: rgb(18 0 0 / 85%);
+          //background: rgb(18 0 0 / 85%);
+          background: rgb(5 5 5 / 80%);
         }
 
         img {
-          object-position: 75% bottom;
+          object-position: center bottom;
+          filter: blur(1.5rem);
         }
       }
 
@@ -451,6 +454,10 @@ body.scrolled .goToMainSite {
 
           h2 {
             font-size: 8rem;
+          }
+
+          .text {
+            font-size: 4.5rem;
           }
 
           .image {
