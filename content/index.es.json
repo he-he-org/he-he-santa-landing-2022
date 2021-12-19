@@ -19,20 +19,11 @@
       "custom": false
     },
     {
-      "price": 17,
+      "price": 25,
       "image":  "10_usd.jpg",
       "productKey": "10_DOLLARS",
       "title": "Hipertensión inducida por el embarazo. Enfermedades de riñones, hígado y el sistema urogenital. (tiras reactivas de orina 100 uds.)",
       "body": "Martina Sánchez está embarazada. Últimamente le dolía la cabeza y acudió a la clínica para pedir analgésicos. Los doctores le pidieron una muestra de orina. Martina se sorprendió cuando los voluntarios la trasladaron con urgencia al hospital municipal. Ella no sospechaba que tenía hipertensión inducida por el embarazo, también conocida como preeclampsia, una patología que puede matar tanto a la madre como al bebé. Se puede diagnosticar con simples tiras reactivas al descubrir un nivel elevado de proteína en la orina.\n\nEstas tiras reactivas también ayudan a revelar problemas en los riñones, el hígado, los conductos biliares y también infecciones de las vías urinarias. Se venden por lotes de 100 unidades que cuestan 17 dólares cada uno. En este caso tan solo 10 centavos (el precio de una tira) pueden salvar dos vidas a la vez.",
-      "presentForUs": false,
-      "custom": false
-    },
-    {
-      "price": 25,
-      "image":  "25_usd.jpg",
-      "productKey": "25_DOLLARS",
-      "title": "Epilepsia (curso de 1 mes de Levetiracetam 750mg)",
-      "body": "El pequeño Roberto come mal. Sus padres lo llevaron a la clínica para que le ayudáramos a mejorar su apetito. Se les olvidó advertirnos que el niño tenía epilepsia. Había sido diagnosticado hace mucho tiempo, todos ya estaban acostumbrados y habían aprendido a ponerle un lápiz en la boca cuando comenzaba un ataque. La familia de Roberto creía que un ataque al día era normal.\n\nRoberto no tomaba medicinas contra la epilepsia. Sus padres no pueden permitirse ir a la capital y recibirlos gratuitamente y tampoco tienen dinero para comprarlos en las farmacias locales. Además, Roberto no va al colegio a causa de su enfermedad.\n\nEl tratamiento que administran los médicos voluntarios de Health & Help es muy costoso. Pero estos medicamentos previenen los ataques y permiten a niños como Roberto llevar una vida sin problemas.",
       "presentForUs": false,
       "custom": false
     },
@@ -42,6 +33,15 @@
       "productKey": "50_DOLLARS",
       "title": "Asma (20 inhaladores para 20 personas)",
       "body": "María Fernández tiene 65 años y toda su vida ha cocinado a fuego abierto. Desde hace mucho tiempo le costaba respirar, pero trataba de no hacer caso a los síntomas. Un día su vecina le contó que en la clínica daban calzado gratis a los niños. María nos visitó para conseguir zapatos nuevos para su nieta y decidió aprovechar la ocasión para ver al médico. Durante la consulta los voluntarios descubrieron que tenía asma y le dieron un inhalador. Unos minutos después, María pudo respirar bien por primera vez en muchos años. \n\nLe dimos a María varios inhaladores para usar en casa. Nuestros médicos le enseñaron detalladamente a usarlos.\n\nLa mayoría de los asmáticos que acuden a nuestra clínica son mujeres.",
+      "presentForUs": false,
+      "custom": false
+    },
+    {
+      "price": 65,
+      "image":  "25_usd.jpg",
+      "productKey": "25_DOLLARS",
+      "title": "Epilepsia (curso de 1 mes de Levetiracetam 750mg)",
+      "body": "El pequeño Roberto come mal. Sus padres lo llevaron a la clínica para que le ayudáramos a mejorar su apetito. Se les olvidó advertirnos que el niño tenía epilepsia. Había sido diagnosticado hace mucho tiempo, todos ya estaban acostumbrados y habían aprendido a ponerle un lápiz en la boca cuando comenzaba un ataque. La familia de Roberto creía que un ataque al día era normal.\n\nRoberto no tomaba medicinas contra la epilepsia. Sus padres no pueden permitirse ir a la capital y recibirlos gratuitamente y tampoco tienen dinero para comprarlos en las farmacias locales. Además, Roberto no va al colegio a causa de su enfermedad.\n\nEl tratamiento que administran los médicos voluntarios de Health & Help es muy costoso. Pero estos medicamentos previenen los ataques y permiten a niños como Roberto llevar una vida sin problemas.",
       "presentForUs": false,
       "custom": false
     },

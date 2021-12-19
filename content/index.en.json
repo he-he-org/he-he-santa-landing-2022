@@ -1,5 +1,5 @@
 {
-  "coverHeader": "Do you want to wish someone a Happy New Year?\n\nToday, you are a Secret Santa!",
+  "coverHeader": "Do you want to wish someone a Merry Christmas?\n\nToday, you are a Secret Santa!",
   "goBack": "Visit our website",
   "introText": "It is your turn to be a Secret Santa! On this page, we have collected five true stories from our work. Behind each one are hundreds of patients who are dealing with the same problems and need your help.\n\nWould you like to wish one of them a happy new year? Choose a story that speaks to you and your donation will go towards helping patients with similar diseases or health issues.",
   "donateAmountPrompt": "How much are you willing to donate?",
@@ -19,20 +19,11 @@
       "custom": false
     },
     {
-      "price": 17,
+      "price": 25,
       "image": "10_usd.jpg",
       "productKey": "10_DOLLARS",
       "title": "Preeclampsia, kidney, liver, urinary, and reproductive system issues (100-ct package of test strips)",
       "body": "Martina Sanchez is pregnant. Recently, she has been getting headaches, so she came to us for pain relief. Martina was surprised when we asked her to step into the restroom and collect some urine in a cup. She was even more surprised when the volunteers urgently got her a ride to the hospital in the city. Martina never suspected that she had preeclampsia - a complication which can kill both mother and child. Among other symptoms, one of the signs of preeclampsia is the presence of certain proteins in urine, which can be easily detected using testing strips.\n\nThese same testing strips can help us discover problems with patients’ kidneys, liver, and bile duct, as well as urinary tract infections. A 100-count package costs $17.\n\nIn this case, ten cents can save two lives. We have many of these cases.",
-      "presentForUs": false,
-      "custom": false
-    },
-    {
-      "price": 25,
-      "image": "25_usd.jpg",
-      "productKey": "25_DOLLARS",
-      "title": "Epilepsy",
-      "body": "Roberto Garcia has not been eating like normal. His parents brought him to the clinic and asked the doctor to bring back his appetite. They did not think to mention that the child has epilepsy. He was diagnosed a long time ago, everyone is used to it and knows to place a pencil in his mouth on time when he has a seizure. Roberto’s family does not think one seizure a day is too many.\n\nRoberto has never been medicated - his parents do not have the time or money to go to the capital and receive free medicine, which costs too much at local pharmacies. Roberto does not go to school - his peers there tease him. Teachers think he is possessed by the devil and are scared of his seizures.\n\nThe treatment prescribed by the volunteer doctors at Health & Help turned out to be too expensive even for our clinic. However, this medicine not only saves people from seizures, but gives children like Roberto a chance to get an education.",
       "presentForUs": false,
       "custom": false
     },
@@ -42,6 +33,15 @@
       "productKey": "50_DOLLARS",
       "title": "Asthma (20 inhalers for 20 people)",
       "body": "Maria Fernandez is only 65, but everyone who sees her thinks she is at least 80. Maria has been cooking over an open fire her entire life. She has had trouble breathing for a long time, but she tries not to focus on her symptoms.\n\nMaria wanted a new pair of boots for her granddaughter. She came by the clinic after a neighbor told her we give out free shoes for children. Since she was here already, Maria decided to see a doctor as well. During her examination, we suspected she had asthma and immediately had her try out an inhaler. After a few minutes, Maria was able to breathe easily for the first time in many years.\n\nMaria was given several inhalers to take home. Though it was hard to teach her how to use them, the doctors succeeded.\n\nMany people in our village do not have access to gas stoves so women have to cook over open fires. More than half of our asthma patients are women.",
+      "presentForUs": false,
+      "custom": false
+    },
+    {
+      "price": 65,
+      "image": "25_usd.jpg",
+      "productKey": "25_DOLLARS",
+      "title": "Epilepsy",
+      "body": "Roberto Garcia has not been eating like normal. His parents brought him to the clinic and asked the doctor to bring back his appetite. They did not think to mention that the child has epilepsy. He was diagnosed a long time ago, everyone is used to it and knows to place a pencil in his mouth on time when he has a seizure. Roberto’s family does not think one seizure a day is too many.\n\nRoberto has never been medicated - his parents do not have the time or money to go to the capital and receive free medicine, which costs too much at local pharmacies. Roberto does not go to school - his peers there tease him. Teachers think he is possessed by the devil and are scared of his seizures.\n\nThe treatment prescribed by the volunteer doctors at Health & Help turned out to be too expensive even for our clinic. However, this medicine not only saves people from seizures, but gives children like Roberto a chance to get an education.",
       "presentForUs": false,
       "custom": false
     },
