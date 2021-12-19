@@ -359,7 +359,7 @@ body.scrolled .goToMainSite {
         bottom: 0;
         right: 0;
 
-        > img {
+        .image {
           display: none;
         }
 
@@ -397,7 +397,7 @@ body.scrolled .goToMainSite {
 
       .bg-list {
         &::before {
-          background: rgb(0 0 0 / 64%);
+          background: rgb(0 0 0 / 85%);
         }
 
         img {
@@ -449,6 +449,16 @@ body.scrolled .goToMainSite {
           position: static;
           display: none;
 
+          h2 {
+            font-size: 8rem;
+          }
+
+          .image {
+            display: block;
+            margin-top: 4rem;
+            width: 100%;
+          }
+
           &.isVisible {
             display: block;
           }
@@ -466,10 +476,10 @@ body.scrolled .goToMainSite {
         }
 
         > button {
-          &[data-custom="true"] {
-            grid-column-start: 1;
-            grid-column-end: 4;
-          }
+          //&[data-custom="true"] {
+          //  grid-column-start: 1;
+          //  grid-column-end: 4;
+          //}
 
           &::before {
             padding: 2rem 0;
