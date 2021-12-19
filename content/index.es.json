@@ -59,7 +59,7 @@
       "title": "Otra suma",
       "image": "custom.jpg",
       "body": "Te hemos contado cinco historias de nuestra clínica, pero nosotros nos enfrentamos a muchas más enfermedades y situaciones difíciles. El costo del tratamiento puede ser de dos, cien o incluso miles de dólares. Puedes hacer una donación única por la suma que te parezca conveniente o registrarte para una donación mensual. Con tu ayuda, compraremos los medicamentos necesarios para nuestros pacientes ¡y te contaremos muchas más historias con un final feliz!",
-      "presentForUs": true,
+      "presentForUs": false,
       "custom": true
     }
   ]

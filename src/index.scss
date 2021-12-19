@@ -458,7 +458,7 @@ body.scrolled .goToMainSite {
       .amounts {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 3rem;
+        grid-gap: 5rem;
         align-items: center;
 
         > button:not(:first-child) {
@@ -466,6 +466,11 @@ body.scrolled .goToMainSite {
         }
 
         > button {
+          &[data-custom="true"] {
+            grid-column-start: 1;
+            grid-column-end: 4;
+          }
+
           &::before {
             padding: 2rem 0;
           }

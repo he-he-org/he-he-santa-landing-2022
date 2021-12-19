@@ -59,7 +59,7 @@
       "title": "Other donation",
       "image": "custom.jpg",
       "body": "We’ve told you just five stories about the issues our patients face, but we deal with many more illnesses at the clinic. The price of treatment can range from just a few dollars to several hundred, or even thousand, US dollars. You can make a one-time contribution for any amount you are able to give, or subscribe to a monthly donation. We will gladly use these funds to buy the medicine our patients need so we can tell many more of their stories with happy endings!",
-      "presentForUs": true,
+      "presentForUs": false,
       "custom": true
     }
   ]
