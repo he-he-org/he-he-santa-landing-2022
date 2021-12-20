@@ -347,9 +347,9 @@ body.scrolled .goToMainSite {
     .details {
       position: absolute;
       bottom: 10rem;
-      right: 12rem;
+      right: 18rem;
       max-width: 200rem;
-      width: calc(100vw - 12rem * 2);
+      width: calc(100vw - 18rem * 2);
       z-index: $z-index-details;
 
       .amount-details {
