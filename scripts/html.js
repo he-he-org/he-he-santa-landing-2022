@@ -18,6 +18,11 @@ for (const lang of LANGS) {
     outputDir: lang === DEFAULT_LANG ? path.join(BUILD, "success") : path.join(BUILD, lang, "success"),
     fn: pug.compileFile(path.join(SRC, `success.pug`)),
   })
+  pages.push({
+    lang,
+    outputDir: lang === DEFAULT_LANG ? path.join(BUILD, "report") : path.join(BUILD, lang, "report"),
+    fn: pug.compileFile(path.join(SRC, `report.pug`)),
+  })
 }
 
 fs.mkdirSync(BUILD, { recursive: true })

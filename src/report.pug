@@ -1,0 +1,13 @@
+extends layout.pug
+
+block head
+  link(rel="stylesheet", href="/report.css" )
+
+block content
+  form#csv_form(action="/.netlify/functions/report")
+    p
+      label
+        span Start date:
+        input(name="start_date", type="date")
+    button Download CSV data
+  script(type='text/javascript', src='/report.js')
