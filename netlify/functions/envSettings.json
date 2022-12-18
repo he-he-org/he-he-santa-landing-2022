@@ -1,67 +1,46 @@
 {
   "production": {
     "products": [
-      {
-        "key": "5_DOLLARS",
-        "stripeId": "prod_IbI5pDisHBgJxT"
-      },
-      {
-        "key": "10_DOLLARS",
-        "stripeId": "prod_IbNUQXrHQ0Do4L"
-      },
-      {
-        "key": "25_DOLLARS",
-        "stripeId": "prod_IbNUdD0Pho05eg"
-      },
-      {
-        "key": "50_DOLLARS",
-        "stripeId": "prod_IbNVWxF94uy0zM"
-      },
-      {
-        "key": "100_DOLLARS",
-        "stripeId": "prod_IbNVSxbBdFnKDG"
-      },
-      {
-        "key": "10_DOLLARS_US",
-        "stripeId": "prod_IdF6Cx3hcJ6lKg"
-      },
-      {
-        "key": "7_DOLLARS_RU",
-        "stripeId": "prod_Kn0lns1f7OIKt5"
-      },
-      {
-        "key": "20_DOLLARS_RU",
-        "stripeId": "prod_Kn0ljfrvFs6d4b"
-      },
-      {
-        "key": "40_DOLLARS_RU",
-        "stripeId": "prod_Kn0lpynMfygsog"
-      },
-      {
-        "key": "75_DOLLARS_RU",
-        "stripeId": "prod_Kn0lio99xeEj5t"
-      },
-      {
-        "key": "250_DOLLARS_RU",
-        "stripeId": "prod_Kn0lLNdbfuh96c"
-      },
-      {
-        "key": "CUSTOM",
-        "stripeId": "prod_KnnMROF1aWxH2T"
-      },
-      {
-        "key": "CUSTOM_RU",
-        "stripeId": "prod_Kn0lJ3DQDuzR4B"
-      }
+      {"key":"25_DOLLARS_EN", "stripeId": "prod_N0QXtMlYtHDvT5"},
+      {"key":"65_DOLLARS_EN", "stripeId":  "prod_N0QZYeEIf4tfsy"},
+      {"key":"100_DOLLARS_EN", "stripeId":  "prod_N0QaidbsNkABmN"},
+      {"key":"120_DOLLARS_EN", "stripeId":  "prod_N0Qazogmy0AISE"},
+      {"key":"257_DOLLARS_EN", "stripeId":  "prod_N0QbyEQYlMO4Ro"},
+      {"key":"CUSTOM_EN", "stripeId":  "prod_N0Qdq0Tt61eUo5"},
+      {"key":"25_DOLLARS_RU", "stripeId": "prod_N0R6zJiVgpeJVi"},
+      {"key":"65_DOLLARS_RU", "stripeId":  "prod_N0R6FjHEsTBBby"},
+      {"key":"100_DOLLARS_RU", "stripeId":  "prod_N0R7wUpyaiD1hF"},
+      {"key":"120_DOLLARS_RU", "stripeId":  "prod_N0R7iFIbVpUUae"},
+      {"key":"257_DOLLARS_RU", "stripeId":  "prod_N0R8SB5WRnN4c7"},
+      {"key":"CUSTOM_RU", "stripeId":  "prod_N0R4UbKQU805t2"},
+      {"key":"25_DOLLARS_ES", "stripeId": "prod_N0R9hwPqbjuTAc"},
+      {"key":"65_DOLLARS_ES", "stripeId":  "prod_N0R9fZ5qp0uaJ5"},
+      {"key":"100_DOLLARS_ES", "stripeId":  "prod_N0RAqWPWDtwguq"},
+      {"key":"120_DOLLARS_ES", "stripeId":  "prod_N0RA3IaIuspM7o"},
+      {"key":"257_DOLLARS_ES", "stripeId":  "prod_N0RBjGWbJzDB85"},
+      {"key":"CUSTOM_ES", "stripeId":  "prod_N0RBEmqwVpVLqn"}
     ]
   },
   "development": {
     "products": [
-      {"key":"25_DOLLARS", "stripeId": "prod_N0Kcmdw8KdBcWP"},
-      {"key":"65_DOLLARS", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
-      {"key":"100_DOLLARS", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
-      {"key":"120_DOLLARS", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
-      {"key":"257_DOLLARS,", "stripeId":  "prod_N0Kcmdw8KdBcWP"}
+      {"key":"25_DOLLARS_EN", "stripeId": "prod_N0Kcmdw8KdBcWP"},
+      {"key":"65_DOLLARS_EN", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
+      {"key":"100_DOLLARS_EN", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
+      {"key":"120_DOLLARS_EN", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
+      {"key":"257_DOLLARS_EN", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
+      {"key":"CUSTOM_EN", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
+      {"key":"25_DOLLARS_ES", "stripeId": "prod_N0Kcmdw8KdBcWP"},
+      {"key":"65_DOLLARS_ES", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
+      {"key":"100_DOLLARS_ES", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
+      {"key":"120_DOLLARS_ES", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
+      {"key":"257_DOLLARS_ES", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
+      {"key":"CUSTOM_ES", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
+      {"key":"25_DOLLARS_RU", "stripeId": "prod_N0Kcmdw8KdBcWP"},
+      {"key":"65_DOLLARS_RU", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
+      {"key":"100_DOLLARS_RU", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
+      {"key":"120_DOLLARS_RU", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
+      {"key":"257_DOLLARS_RU", "stripeId":  "prod_N0Kcmdw8KdBcWP"},
+      {"key":"CUSTOM_RU", "stripeId":  "prod_N0Kcmdw8KdBcWP"}
     ]
   }
 }

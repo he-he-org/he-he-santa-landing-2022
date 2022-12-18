@@ -350,6 +350,7 @@ body.scrolled .goToMainSite {
         position: absolute;
         top: 0;
         left: 0;
+        max-width: 180rem;
 
         .image {
           display: none;
@@ -366,7 +367,6 @@ body.scrolled .goToMainSite {
         }
 
         .text {
-          max-width: 180rem;
         }
       }
     }
