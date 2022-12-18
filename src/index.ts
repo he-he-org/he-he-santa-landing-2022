@@ -40,18 +40,18 @@ let productInfo = null;
 const hiddenControls = $("#donate-screen .donate .controls")[0] as HTMLElement;
 
 const allAmountsButtons = $('#amounts button');
-const onClickAmount = (e) => {
-  const productKey = e.currentTarget.getAttribute('data-product-key')
-  const custom = e.currentTarget.getAttribute('data-custom') === "true"
-  const forUs = e.currentTarget.getAttribute('data-for-us')
-  const amount = custom ? null : parseInt(e.currentTarget.getAttribute('data-value'))
+const onClickAmount = (currentTarget) => {
+  const productKey = currentTarget.getAttribute('data-product-key')
+  const custom = currentTarget.getAttribute('data-custom') === "true"
+  const forUs = currentTarget.getAttribute('data-for-us')
+  const amount = custom ? null : parseInt(currentTarget.getAttribute('data-value'))
   productInfo = {
     amount: amount * 100,
     productKey,
     custom,
   }
   for (const el of allAmountsButtons) {
-    el.classList.toggle('isActive', el === e.currentTarget);
+    el.classList.toggle('isActive', el === currentTarget);
   }
   for (const detailsEl of $('#details .amount-details')) {
     if (detailsEl.getAttribute('data-product-key') === productKey) {
@@ -80,8 +80,9 @@ const onClickAmount = (e) => {
   }
 };
 for (const element of allAmountsButtons) {
-  element.addEventListener('click', onClickAmount)
+  element.addEventListener('click', (e) => onClickAmount(e.currentTarget))
 }
+onClickAmount(allAmountsButtons[0])
 
 const donateAmountRe = /^\$?(\d+(?:[,.]\d*)?)$/;
 donateAmountInput.addEventListener('focus', () => {

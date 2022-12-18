@@ -2,11 +2,6 @@ const path = require('path');
 const fs = require('fs');
 
 const ROOT = path.resolve(__dirname, "..");
-const BUILD = path.join(ROOT, "build");
-const CONTENT = path.join(ROOT, "content");
-const SRC = path.join(ROOT, "src");
-const LANGS = process.env.LANGS.split(",");
-const DEFAULT_LANG = process.env.DEFAULT_LANG;
 
 function readDotEnv() {
   let mergedConfig = {};
@@ -30,7 +25,15 @@ function readDotEnv() {
     }
   }
 }
+readDotEnv();
+
+const BUILD = path.join(ROOT, "build");
+const CONTENT = path.join(ROOT, "content");
+const SRC = path.join(ROOT, "src");
+const LANGS = process.env.LANGS.split(",");
+const DEFAULT_LANG = process.env.DEFAULT_LANG;
+
 
 module.exports = {
-  ROOT, BUILD, SRC, LANGS, DEFAULT_LANG, CONTENT, readDotEnv
+  ROOT, BUILD, SRC, LANGS, DEFAULT_LANG, CONTENT
 }

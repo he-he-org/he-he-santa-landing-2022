@@ -2,8 +2,7 @@ const pug = require('pug');
 const path = require('path');
 const fs = require('fs');
 
-const { ROOT, SRC, BUILD, LANGS, DEFAULT_LANG, readDotEnv } = require('./common');
-readDotEnv();
+const { ROOT, SRC, BUILD, LANGS, DEFAULT_LANG } = require('./common');
 
 const pages = []
 

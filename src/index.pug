@@ -51,19 +51,19 @@ block content
             .bg
           div #{data.donateSubscription}
         #errorMessage.errorMessage
-    #details.details
-      each present in data.presents
-        .amount-details(
-          data-value=present.price,
-          data-product-key=present.productKey,
-          data-for-us=present.presentForUs.toString()
-        )
-          h2 #{present.title}
-          img.image(src='/assets/' + present.image)
-          .text
-            - var paragraphs = present.body.trim().split(/(\r?\n)+/);
-            each paragraph in paragraphs
-              p #{paragraph}
+      #details.details
+        each present in data.presents
+          .amount-details(
+            data-value=present.price,
+            data-product-key=present.productKey,
+            data-for-us=present.presentForUs.toString()
+          )
+            h2 #{present.title}
+            img.image(src='/assets/' + present.image)
+            .text
+              - var paragraphs = present.body.trim().split(/(?:\r?\n)+/);
+              each paragraph in paragraphs
+                p #{paragraph}
   script(src='https://js.stripe.com/v3')
   script(type='text/javascript', src='/index.js')
 

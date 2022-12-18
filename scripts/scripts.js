@@ -1,9 +1,7 @@
 const esbuild = require('esbuild');
 const path = require('path');
 
-const { BUILD, SRC, LANGS, DEFAULT_LANG, readDotEnv } = require('./common');
-
-readDotEnv()
+const { BUILD, SRC, LANGS, DEFAULT_LANG } = require('./common');
 
 const ENTRIES = ['index', 'report']
 for (const entry of ENTRIES) {

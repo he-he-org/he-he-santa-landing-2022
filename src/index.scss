@@ -37,6 +37,10 @@ body.scrolled .goToMainSite {
       width: 78rem;
     }
 
+    .caption {
+      font-weight: 300;
+    }
+
     .language-switch {
       font-size: 4rem;
       position: absolute;
@@ -115,8 +119,8 @@ body.scrolled .goToMainSite {
         position: absolute;
         left: 0;
         top: 0;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         object-fit: cover;
         object-position: left top;
         transition: opacity 700ms;
@@ -142,12 +146,12 @@ body.scrolled .goToMainSite {
     }
 
     h1 {
-      font-size: 6rem;
+      font-size: 11rem;
       font-weight: bold;
     }
 
     h2 {
-      font-size: 6rem;
+      font-size: 8rem;
       font-weight: bold;
     }
 
@@ -158,7 +162,7 @@ body.scrolled .goToMainSite {
 
       p {
         &:not(:first-child) {
-          margin-top: 1em;
+          margin-top: 0.5em;
           line-height: 1.1em;
         }
       }
@@ -206,6 +210,7 @@ body.scrolled .goToMainSite {
         font-size: 6rem;
         padding: 0;
         outline: none;
+        font-weight: 300;
 
         &:not(:first-child) {
           margin-left: 10rem;
@@ -216,14 +221,14 @@ body.scrolled .goToMainSite {
         }
 
         &::before {
-          content: ' ';
+          content: " ";
           position: absolute;
           top: 50%;
           left: 50%;
-          border: 0.5rem solid var(--red);
+          border: 1rem solid var(--yellow);
           transform: translateX(-50%) translateY(-50%);
-          padding: 3rem 5rem;
-          border-radius: 0.75rem;
+          padding: 3rem 4rem;
+          border-radius: 5rem;
           display: none;
           width: 100%;
           height: 100%;
@@ -242,7 +247,7 @@ body.scrolled .goToMainSite {
       border-radius: 2rem;
       font-size: 5rem;
       color: white;
-      padding: 1rem 18rem;
+      padding: 1rem 13rem;
       transition: opacity 200ms;
       flex-shrink: 0;
 
@@ -255,6 +260,8 @@ body.scrolled .goToMainSite {
     .donateButton {
       background: var(--red);
       border: none;
+      font-weight: bold;
+      font-size: 6rem;
     }
 
     .donateAmountInput {
@@ -269,22 +276,9 @@ body.scrolled .goToMainSite {
       margin-left: 3rem;
     }
 
-    .row {
-      //.donateButton {
-      //  border-top-right-radius: 0;
-      //  border-bottom-right-radius: 0;
-      //  padding: 1rem 12rem;
-      //}
-      //.donateAmountInput {
-      //  border-top-left-radius: 0;
-      //  border-bottom-left-radius: 0;
-      //}
-    }
-
-
     .donateSubscribeCheckbox {
       display: flex;
-      font-size: 5rem;
+      font-size: 4rem;
       align-items: center;
       cursor: pointer;
       margin-top: 6rem;
@@ -345,29 +339,34 @@ body.scrolled .goToMainSite {
 
 
     .details {
-      position: absolute;
-      bottom: 10rem;
-      right: 18rem;
-      max-width: 200rem;
-      width: calc(100vw - 18rem * 2);
-      z-index: $z-index-details;
+      position: relative;
+      width: 100%;
+      margin-top: 5rem;
 
       .amount-details {
         opacity: 0;
         transition: opacity 300ms;
         pointer-events: none;
         position: absolute;
-        bottom: 0;
-        right: 0;
+        top: 0;
+        left: 0;
 
         .image {
           display: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
         }
 
         &.isVisible {
           opacity: 1;
           pointer-events: all;
           transition-delay: 500ms;
+        }
+
+        .text {
+          max-width: 180rem;
         }
       }
     }
@@ -405,6 +404,7 @@ body.scrolled .goToMainSite {
         img {
           object-position: center bottom;
           filter: blur(1.5rem);
+
         }
       }
 

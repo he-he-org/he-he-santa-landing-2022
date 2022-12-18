@@ -1,6 +1,6 @@
 const chokidar = require('chokidar');
 const child_process = require('child_process');
-const { SRC } = require('./common');
+const { SRC, CONTENT } = require('./common');
 const pc = require('picocolors')
 
 const watcherLog = (...args) => console.log(pc.green(`[watcher]: ${args.map(x => x.toString()).join(', ')}`))
@@ -11,7 +11,7 @@ async function makeWatcher(rebuild) {
 
     let bundling = false;
     let bundleAgain = false;
-    chokidar.watch(SRC).on('all', (_e) => {
+    chokidar.watch([SRC, CONTENT]).on('all', (_e) => {
       if (bundling) {
         bundleAgain = true;
         return;
@@ -51,7 +51,7 @@ async function makeWatcher(rebuild) {
 
 makeWatcher(() => {
   return new Promise((resolve, reject) => {
-    child_process.exec('npm run all build:to-rebuild:*', {}, (error) => {
+    child_process.exec(`npm run all 'build:to-rebuild:*'`, {}, (error) => {
       if (error) {
         reject(error);
       } else {
