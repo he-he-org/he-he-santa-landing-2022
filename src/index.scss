@@ -257,6 +257,23 @@ body.scrolled .goToMainSite {
       }
     }
 
+    .donateOr {
+      font-size: 6rem;
+      display: flex;
+      margin-left: 3rem;
+      align-items: center;
+      font-weight: 300;
+
+      a {
+        text-decoration: none;
+        border-bottom: 1px solid white;
+      }
+
+      &, * {
+        color: white;
+      }
+    }
+
     .donateButton {
       background: var(--red);
       border: none;

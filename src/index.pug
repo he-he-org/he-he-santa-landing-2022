@@ -45,6 +45,14 @@ block content
         .row
           button#donateButton.donateButton #{data.donateButton}
           input#donateAmount.donateAmountInput(type="text")
+          if currentLang === "ru"
+            div.donateOr
+              span
+                | или перейти на
+                |
+                a(
+                  href="https://sobe.ru/na/podderzhi_proekt_health_help"
+                ) sobe.ru
         label.donateSubscribeCheckbox
           .checkbox
             input#donateSubscribeCheckbox(type='checkbox')
