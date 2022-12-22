@@ -57,7 +57,7 @@
     {
       "price": 0,
       "image": "amount_not_selected.jpg",
-      "productKey": "0_CUSTOM_ES",
+      "productKey": "CUSTOM_ES",
       "title": "Otras donaciones",
       "body": "Además de estas cinco historias, en nuestra clínica atendemos a muchos más pacientes. Y aunque admiramos lo diferentes que son todos ellos, desearíamos que no padecieran enfermedades tan diversas. El precio del tratamiento puede oscilar entre unos pocos dólares y varios cientos, o incluso miles de dólares. Puedes hacer una aportación única por el importe que desees o suscribirte a una donación mensual. Estaremos encantados de utilizar estos fondos para comprar los medicamentos que necesitan nuestros pacientes.",
       "presentForUs": false,
