@@ -29,7 +29,7 @@
     "build:to-rebuild:html": "node scripts/html.js",
     "build": "npm run all build:**",
     "start:watch": "node scripts/watch.js",
-    "start": "netlify dev"
+    "start": "rm -rf build && netlify dev"
   },
   "repository": {
     "type": "git",

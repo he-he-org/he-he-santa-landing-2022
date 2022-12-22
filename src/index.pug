@@ -6,23 +6,26 @@ block head
 block content
   a(href=`https://he-he.org${langPrefix}`).goToMainSite <span>&#10229;</span>#{data.goBack}
   .screen.cover
+    .ribbon
+      img.bow(src='/assets/red_bow.png')
+      .caption
+        a(href=`https://he-he.org${langPrefix}`)
+          img.logo(alt='Health&Help logo' src='/assets/logo.svg')
+        - var list = data.coverHeader.trim().split(/\s*(?:\r?\n)+\s*/);
+        each item in list
+          p #{item}
     .screen-content
       .language-switch
+        - console.log(env.LANGS)
         each lang in env.LANGS
           if lang === env.DEFAULT_LANG
             a(href='/') #{lang.toUpperCase()}
           else
             a(href='/' + lang + '/') #{lang.toUpperCase()}
-      a(href=`https://he-he.org${langPrefix}`)
-        img.logo(alt='Health&Help logo' src='/assets/logo.svg')
-      .caption
-        - var list = data.coverHeader.trim().split(/(\r?\n)+/);
-        each item in list
-          p #{item}
   .screen.intro
     .screen-content
       .text
-        - var paragraphs = data.introText.trim().split(/(\r?\n)+/);
+        - var paragraphs = data.introText.trim().split(/\s*(?:\r?\n)+\s*/);
         each paragraph in paragraphs
           p #{paragraph}
   #donate-screen.screen.donate

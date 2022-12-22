@@ -1,9 +1,10 @@
 @import "reset.scss";
 
 :root {
-  font-size: .597vmin;
+  font-size: .5vmin;
   --red: #D35357;
   --yellow: #FFD600;
+  --ribbon: #DB3945;
 }
 
 html, button {
@@ -40,6 +41,6 @@ $z-index-details: 5;
   span {
     margin-right: 0.4em;
     position: relative;
-    top: -0.03em;
+    top: -0.17em;
   }
 }
