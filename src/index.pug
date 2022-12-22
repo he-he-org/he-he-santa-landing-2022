@@ -73,7 +73,7 @@ block content
             h2 #{present.title}
             img.image(src='/assets/' + present.image)
             .text
-              - var paragraphs = present.body.trim().split(/(?:\r?\n)+/);
+              - var paragraphs = present.body.trim().split(/\s*(?:\r?\n)+\s*/);
               each paragraph in paragraphs
                 p #{paragraph}
   script(src='https://js.stripe.com/v3')
