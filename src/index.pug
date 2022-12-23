@@ -4,7 +4,7 @@ block head
   link(rel="stylesheet", href="/index.css" )
 
 block content
-  a(href=`https://he-he.org${langPrefix}`).goToMainSite <span>&#10229;</span>#{data.goBack}
+  a(href=data.backUrl).goToMainSite <span>&#10229;</span>#{data.goBack}
   .screen.cover
     .bg
     .ribbon
