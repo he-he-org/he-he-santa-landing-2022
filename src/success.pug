@@ -4,5 +4,6 @@ block head
   link(rel="stylesheet", href="/success.css" )
 
 block content
-  a(href=data.backUrl).goToMainSite <span>&#10229;</span>#{data.goBack}
-  h1.message #{data.thankYou}
+  main
+    a(href=data.backUrl).goToMainSite <span>&#10229;</span>#{data.goBack}
+    h1.message #{data.thankYou}
